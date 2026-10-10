@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Interview Preparation System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Prep<span>AI</span></div>
+    <nav>
+      <a href="#practice">Practice</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#progress">My progress</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">YOUR INTERVIEW PRACTICE PARTNER</p>
+        <h1>Prepare today.<br /><span>Answer with confidence.</span></h1>
+        <p class="hero-description">
+          Practise common interview questions, review helpful tips, and track your own progress
+          in a simple, student-friendly space.
+        </p>
+        <a class="primary-button" href="#practice">Start practising <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-card" aria-label="Practice session summary">
+        <div class="mini-card-top"><span class="pulse"></span> PRACTICE SESSION</div>
+        <div class="hero-icon">✦</div>
+        <h2>One question at a time</h2>
+        <p>Think it through. Write it down. Learn as you go.</p>
+        <div class="progress-track"><span></span></div>
+        <div class="mini-card-bottom"><span>Build your routine</span><strong>Step by step</strong></div>
+      </div>
+    </section>
+
+    <section id="practice" class="panel practice-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PRACTICE ROOM</p>
+          <h2>Let's get you interview-ready</h2>
+          <p class="muted">Choose a category and answer at your own pace.</p>
+        </div>
+        <div class="question-count" id="question-count">Question 1</div>
+      </div>
+
+      <div class="controls">
+        <label for="category">Practice category</label>
+        <select id="category">
+          <option value="HR">HR & Personal</option>
+          <option value="Web Development">Web Development</option>
+          <option value="Python">Python Basics</option>
+        </select>
+      </div>
+
+      <div class="question-card">
+        <div class="question-label"><span class="question-dot"></span> YOUR QUESTION</div>
+        <h3 id="question-text">Tell me about yourself.</h3>
+        <p id="question-hint">Tip: Mention your education, interests, strengths, and career goal.</p>
+        <label class="answer-label" for="answer">Your answer</label>
+        <textarea id="answer" rows="5" placeholder="Type your answer here..."></textarea>
+        <div class="answer-footer">
+          <span id="character-count">0 characters</span>
+          <span>Take your time — this is practice.</span>
+        </div>
+      </div>
+
+      <div class="self-assessment">
+        <div>
+          <h3>How confident do you feel?</h3>
+          <p class="muted">This is your own reflection, not an AI score.</p>
+        </div>
+        <div class="rating-options" role="group" aria-label="Confidence rating">
+          <button type="button" class="rating-button" data-rating="1">1</button>
+          <button type="button" class="rating-button" data-rating="2">2</button>
+          <button type="button" class="rating-button" data-rating="3">3</button>
+          <button type="button" class="rating-button" data-rating="4">4</button>
+          <button type="button" class="rating-button" data-rating="5">5</button>
+        </div>
+        <div class="rating-legend"><span>Not yet confident</span><span>Very confident</span></div>
+      </div>
+
+      <div class="practice-actions">
+        <button id="hint-button" class="secondary-button" type="button">Show answer tips</button>
+        <button id="save-button" class="primary-button" type="button">Save practice</button>
+        <button id="next-button" class="text-button" type="button">Next question →</button>
+      </div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+      <div id="answer-tips" class="tips-box hidden">
+        <strong>A simple answer checklist</strong>
+        <ul>
+          <li>Answer the question directly.</li>
+          <li>Give one clear example when possible.</li>
+          <li>Keep your answer organised and honest.</li>
+          <li>For “Tell me about yourself,” try: present → skills/interests → goal.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="three-cards">
+      <article class="info-card"><div class="info-number">01</div><h3>Choose a topic</h3><p>Select HR, Web Development, or Python questions that match your goal.</p></article>
+      <article class="info-card"><div class="info-number">02</div><h3>Practise your answer</h3><p>Write an answer, review the tips, and reflect on how confident you feel.</p></article>
+      <article class="info-card"><div class="info-number">03</div><h3>Track your practice</h3><p>Save your session and use your history to build a steady practice habit.</p></article>
+    </section>
+
+    <section id="progress" class="panel progress-panel">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR JOURNEY</p><h2>My practice progress</h2><p class="muted">Sessions saved in this browser on this device.</p></div>
+        <button id="clear-history" class="secondary-button" type="button">Clear history</button>
+      </div>
+      <div class="stats-grid">
+        <div class="stat-card"><span>Sessions saved</span><strong id="total-sessions">0</strong></div>
+        <div class="stat-card"><span>Average confidence</span><strong id="average-rating">—</strong></div>
+        <div class="stat-card"><span>Categories practised</span><strong id="category-count">0</strong></div>
+      </div>
+      <div id="history-list" class="history-list"><p class="empty-state">No sessions saved yet. Complete a practice question to see it here.</p></div>
+    </section>
+
+    <section class="notice">
+      <strong>Project note:</strong> This beginner prototype uses a prepared question bank and self-assessment.
+      It does not currently use an AI model or automatically judge answers. AI-powered feedback can be added as a future enhancement.
+    </section>
+  </main>
+
+  <footer><span>PrepAI · Student Project Prototype</span><span>Practise consistently. Grow confidently.</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
